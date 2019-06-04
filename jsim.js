@@ -1,3 +1,45 @@
+/* When some error occurs and it is not HTTP 400. This modal is displayed.*/
+var errorModal = '<div class="modal" id="modalError" role="dialog">'+ 
+'<div class="modal-dialog modal-sm">'+ 
+'<div id="modalContentError" class="modal-content" style="background-color:#E1DEDE">'+ 
+'<div class="modal-header">'+ 
+'<button type="button"  class="close" data-dismiss="modal">&times;</button>'+ 
+'<h5>  <span class="glyphicon glyphicon-warning-sign"></span> Warning </h5>'+ 
+'</div><div class="modal-body"> <div id="messageError">'+ 
+'</div> </div></div></div></div>';
+
+/* Small modal where html is displayed. */
+var smallModal = '<div class="modal" id="smallModal" role="dialog">'+ 
+'<div class="modal-dialog modal-sm">'+ 
+'<div id="smallModalContent" class="modal-content">'+
+'</div></div></div>';
+
+/* Big modal window. */
+var bigModal = '<div class="modal" id="bigModal" role="dialog">'+ 
+'<div class="modal-dialog modal-lg">'+ 
+'<div id="bigModalContent" class="modal-content">'+
+'</div></div></div>';
+
+/* Medium modal window. */
+var mediumModal = '<div class="modal" id="mediumModal" role="dialog">'+ 
+'<div class="modal-dialog">'+ 
+'<div id="mediumModalContent" class="modal-content">'+
+'</div></div></div>';
+
+/* Used to display a Please, wait window ... */
+var waitModal ='<div class="modal " id="modalWait" role="dialog"'+ 
+'data-backdrop="static" data-keyboard="false">'+ 
+'<div class="modal-dialog modal-sm">'+ 
+'<div id="modalContentWait" class="modal-content">'+
+'<div class="modal-body" style="background-color:#E1DEDE">'+
+'<h5>  <span class="glyphicon glyphicon-time"></span>'+ 
+'Please, wait <small> It may take a while ... </small>'+ 
+'<h5></div></div></div></div>';
+
+$(document).ready(function(){
+    $('body').prepend(smallModal + mediumModal + errorModal + waitModal);
+});
+
 function do_post(e) {
     e.preventDefault();
     current = $(e.target).closest('.modal-content');
@@ -66,7 +108,6 @@ function do_post(e) {
     });
 }
 
-
 function do_get(e) {
     e.preventDefault();
     current = $(e.target).closest('.modal-content');
@@ -130,43 +171,5 @@ $(document).on('submit', 'form', function(e) {
     $('.e-post[data-form="#' + $(this).attr('id') + '"]').click();
 });
 
-var elem0 = '<div class="modal" id="smallModal" role="dialog">'+ 
-'<div class="modal-dialog modal-sm">'+ 
-'<div id="smallModalContent" class="modal-content">'+
-'</div></div></div>';
-
-var elem1 = '<div class="modal" id="bigModal" role="dialog">' + 
-'<div class="modal-dialog modal-lg">' + 
-'<div id="bigModalContent" class="modal-content">' +
-'</div></div></div>';
-
-var elem2 = '<div class="modal" id="mediumModal" role="dialog">' + 
-'<div class="modal-dialog">' + 
-'<div id="mediumModalContent" class="modal-content">' +     
-'</div></div></div>';
-
-var elem3 = '<div class="modal" id="modalError" role="dialog">' + 
-'<div class="modal-dialog modal-sm">' + 
-'<div id="modalContentError" class="modal-content" style="background-color:#E1DEDE">' + 
-'<div class="modal-header">' + 
-'<button type="button"  class="close" data-dismiss="modal">&times;</button>' + 
-'<h5>  <span class="glyphicon glyphicon-warning-sign"></span> Warning </h5>' + 
-'</div><div class="modal-body"> <div id="messageError">' + 
-'</div> </div></div></div></div>';
-
-var elem4 ='<div class="modal " id="modalWait" role="dialog"' + 
-'data-backdrop="static" data-keyboard="false">' + 
-'<div class="modal-dialog modal-sm">' + 
-'<div id="modalContentWait" class="modal-content">'+
-'<div class="modal-body" style="background-color:#E1DEDE">'+
-'<h5>  <span class="glyphicon glyphicon-time"></span>' + 
-'Please, wait <small> It may take a while ... </small>' + 
-'<h5></div></div></div></div>'
-
-$('body').prepend(elem0);
-$('body').prepend(elem1);
-$('body').prepend(elem2);
-$('body').prepend(elem3);
-$('body').prepend(elem4);
 
 
