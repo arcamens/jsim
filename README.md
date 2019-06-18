@@ -1,7 +1,7 @@
-# jsim
+# Jsim
 
-
-# Install
+The Jsim javascript library was developed to implement dynamic sites in a short development time. 
+It is built on top of jquery/bootstrap libraries.
 
 # Usage
 
@@ -13,6 +13,12 @@ modal windows to display html content so Jsim can better be used to organize web
 
 The Jsim package offers three types of modal windows to display html content, small, medium and big modals.
 It also offers a 'Please, wait ...' message to be displayed after each one of the HTTP requests are performed.
+
+# Documentation
+
+Check jsim wiki for more details.
+
+[Wiki](https://github.com/arcamens/jsim/wiki)
 
 
 
